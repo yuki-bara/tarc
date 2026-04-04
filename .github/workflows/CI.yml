@@ -27,7 +27,7 @@ jobs:
       - name: download file test
         run: |
           mkdir -p internal/tests/test internal/tests/files
-          wget https://www.python.org -P test
+          wget https://www.python.org -P internal/tests/test
       - name: Test
         run: |
           cd internal/tests
