@@ -24,11 +24,13 @@ jobs:
         with:
           go-version: '1.26.1'
       - uses: actions/checkout@v6
-      - name: Test
+      - name: download file test
         run: |
           cd internal/tests
           mkdir test
           wget https://www.python.org -P test
+      - name: Test
+        run:
           go run .
           rm -r out test
       # - uses: stefanzweifel/git-auto-commit-action@v6
