@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: 0BSD
+# Author: Makkhawan Sardlah
+
+name: CI
+
+on: 
+  push:
+    paths:
+      - src/**
+      - .github/workflows/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  BUILD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.1'
+      - uses: actions/checkout@v6
+      - name: build file Test
+        run: |
+          mkdir -p tests/test
+          wget https://www.python.org -P tests/test
+      - name: Test
+        run: |
+          cd tests
+          go run .
+          rm -r out test
+      # - uses: stefanzweifel/git-auto-commit-action@v6
+      #   with:
+      #     commit_message: "Auto-test"
