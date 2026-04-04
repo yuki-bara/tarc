@@ -30,7 +30,7 @@ jobs:
           mkdir test
           wget https://www.python.org -P test
       - name: Test
-        run:
+        run: |
           go run main.go
           rm -r out test
       # - uses: stefanzweifel/git-auto-commit-action@v6
