@@ -6,7 +6,6 @@ name: CI
 on: 
   push:
     paths:
-      - src/**
       - .github/workflows/**
   workflow_dispatch:
 
