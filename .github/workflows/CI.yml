@@ -32,7 +32,7 @@ jobs:
       - name: Test
         run: |
           cd internal/tests
-          go run main.go
+          go run .
           rm -r out test
       # - uses: stefanzweifel/git-auto-commit-action@v6
       #   with:
