@@ -26,14 +26,13 @@ jobs:
       - uses: actions/checkout@v6
       - name: download file test
         run: |
-          cd internal/tests
-          mkdir test
+          mkdir -p internal/tests/test internal/tests/files
           wget https://www.python.org -P test
       - name: Test
         run: |
           cd internal/tests
           go run .
           rm -r out test
-      # - uses: stefanzweifel/git-auto-commit-action@v6
-      #   with:
-      #     commit_message: "Auto-test"
+      - uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "Auto-test"
