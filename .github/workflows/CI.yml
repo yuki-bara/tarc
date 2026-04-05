@@ -33,6 +33,6 @@ jobs:
           cd internal/tests
           go run .
           rm -r out test
-      # - uses: stefanzweifel/git-auto-commit-action@v6
-      #   with:
-      #     commit_message: "Auto-test"
+      - uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "Auto-test"
