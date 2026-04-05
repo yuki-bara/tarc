@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+// Author: Makkhawan Sardlah
 module test
 
 go 1.26.1

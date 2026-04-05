@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+// Author: Makkhawan Sardlah
 package tarc
 
 import (
